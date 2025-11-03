@@ -1,7 +1,5 @@
 import math 
 
-
-
 def dist(p1, p2):
     return math.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
 
@@ -13,8 +11,8 @@ def closest_pair(pts):
     mid = n // 2
     mid_pt = pts[mid]   
 
-    # Divide into left and right halves
-    dl, pair_left = closest_pair(pts[:mid])
+    
+    dl, pair_left = closest_pair(pts[:mid])# Divide into left and right halves
     dr, pair_right = closest_pair(pts[mid:])
 
     # Find smaller distance
@@ -25,7 +23,7 @@ def closest_pair(pts):
         d_min = dr
         best_pair = pair_right
 
-    # Build the strip
+    #building the strip
     strip = [p for p in pts if abs(p[0] - mid_pt[0]) < d_min]
 
     # Find closest in strip

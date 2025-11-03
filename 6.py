@@ -7,7 +7,7 @@ def generate_combinations(elements, start_index, current_combination, all_combin
     for i in range(start_index, len(elements)):
         current_combination.append(elements[i])
         generate_combinations(elements, i + 1, current_combination, all_combinations)
-        current_combination.pop()  # backtrack
+        current_combination.pop()  
 
 
 
@@ -38,7 +38,7 @@ def knapsack(value, weight, item_list, max_weight):
     return max_value, best_combination
 
 
-# main function
+
 items  = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6']
 weights = [2,4,3,5,6,8]
 values = [3,6,2,4,7,1]
